@@ -1,0 +1,146 @@
+{
+	"label": "Create an Image with Dall-E",
+	"name": "createImageDallE",
+	"category": "integrations",
+	"description": "This flow step will create an image with dall-e endpoint.",
+	"inputs": [
+		{
+			"label": "Prompt",
+			"name": "prompt",
+			"type": "text",
+			"required": "true",
+			"description": "A text description of the desired image(s). The maximum length is 1000 characters.",
+			"options": {
+				"allowContextSelector": "true",
+				"validation": {
+					"function": "!config.prompt || config.prompt.length >= 1000",
+					"message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+				}
+			}
+		},
+		{
+			"label": "Advanced Options For Prompt",
+			"name": "advancedSettingsForPrompt",
+			"type": "fieldsGroup",
+			"options": {
+				"fields": [
+					{
+						"label": "Get url",
+						"name": "url",
+						"type": "boolean",
+						"description": "If true the answer will be a url to the image(s), else you will get a b64 json.",
+						"defaultValue": true,
+						"options": {
+							"allowContextSelector": "false"
+						}
+					},
+					{
+						"label": "Size",
+						"name": "size",
+						"type": "dropDown",
+						"multiplicity": "one",
+						"options": {
+							"possibleValues": [
+								{
+									"label": "256x256",
+									"name": "256x256"
+								},
+								{
+									"label": "512x512",
+									"name": "512x512"
+								},
+								{
+									"label": "1024x1024",
+									"name": "1024x1024"
+								}
+							],
+							"allowContextSelector": "true"
+						}
+					},
+					{
+						"label": "N",
+						"name": "n",
+						"type": "text",
+						"description": "How many completions to generate for each prompt.",
+						"options": {
+							"allowContextSelector": "true",
+							"validation": {
+								"function": "!config.n || utils.isPlaceholder(config.n) || utils.getInteger(config.n) >= 0",
+								"message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+							}
+						}
+					},
+					{
+						"label": "User",
+						"name": "user",
+						"type": "text",
+						"description": "A unique identifier representing your end-user.",
+						"options": {
+							"allowContextSelector": "true"
+						}
+					}
+				]
+			}
+		},
+		{
+			"label": "Advanced Settings",
+			"name": "advancedSettings",
+			"type": "fieldsGroup",
+			"options": {
+				"fields": [
+					{
+						"label": "Full Response",
+						"name": "fullResponse",
+						"type": "boolean",
+						"description": "Include extended information about response",
+						"visibility": "config.overrideSettings",
+						"defaultValue": false,
+						"options": {
+							"allowContextSelector": "false"
+						}
+					},
+					{
+						"label": "Connection timeout",
+						"name": "connectionTimeout",
+						"description": "Connect timeout interval, in milliseconds (0 = infinity). Default value: 5000 ms (5 sec)",
+						"type": "text",
+						"defaultValue": "5000",
+						"typeOptions": {
+							"validation": {
+								"function": "!config.connectionTimeout || utils.isPlaceholder(config.connectionTimeout) || utils.getInteger(config.connectionTimeout) >= 0",
+								"message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+							}
+						},
+						"options": {
+							"allowContextSelector": "false"
+						}
+					},
+					{
+						"label": "Read timeout",
+						"name": "readTimeout",
+						"description": "Read timeout interval, in milliseconds (0 = infinity). Default value: 60000 ms (60 sec)",
+						"type": "text",
+						"defaultValue": "60000",
+						"typeOptions": {
+							"validation": {
+								"function": "!config.readTimeout || utils.isPlaceholder(config.readTimeout) || utils.getInteger(config.readTimeout) >= 0",
+								"message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+							}
+						},
+						"options": {
+							"allowContextSelector": "false"
+						}
+					}
+				]
+			}
+		}
+	],
+	"outputs": [
+		{
+			"label": "Response",
+			"name": "response",
+			"type": "object",
+			"description": "The response to external URL"
+		}
+	]
+}
