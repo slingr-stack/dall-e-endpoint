@@ -1,0 +1,56 @@
+{
+    "label": "DALL-E",
+    "name": "dall-e",
+    "apiVersion": "v1",
+    "internal": false,
+    "configurationType": "GLOBAL",
+    "deployment": {
+        "type": "java11",
+        "profiles":[
+            {
+                "name": "default",
+                "label": "Default",
+                "memory": 256,
+                "description": "Default configuration"
+            }
+        ],
+        "allowMultipleInstances": true
+    },
+    "status": "ACTIVE",
+    "stores": [],
+    "events": [],
+    "functions": [
+        {
+            "label": "GET",
+            "name": "_get",
+            "description": "Sends a GET request"
+        },
+        {
+            "label": "POST",
+            "name": "_post",
+            "description": "Sends a POST request"
+        }
+    ],
+    "scripts":[
+        "functions.js"
+    ],
+    "flowSteps": [
+        "apiCallDallE",
+        "createImageDallE"
+    ],
+    "configuration":[
+        {
+            "name": "apiToken",
+            "label": "API Token",
+            "type": "password",
+            "visibility": "true",
+            "required": "true"
+        },
+        {
+            "name": "organizationId",
+            "label": "Organization ID",
+            "type": "text",
+            "visibility": "true"
+        }
+    ]
+}

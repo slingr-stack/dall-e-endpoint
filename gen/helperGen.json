@@ -1,0 +1,81 @@
+{
+  "fileName": "functions",
+  "endpointName": "dallE",
+  "apiDescriptors": [
+    {
+      "prefix": "",
+      "suffix": "",
+      "method": "GET",
+      "url": "/v1/models",
+      "omittableUrlParts": [
+        "v1"
+      ],
+      "docsLinks": [
+        "https://platform.openai.com/docs/api-reference"
+      ]
+    },
+    {
+      "prefix": "",
+      "suffix": "",
+      "method": "GET",
+      "url": "/v1/models/:model",
+      "omittableUrlParts": [
+        "v1"
+      ],
+      "docsLinks": [
+        "https://platform.openai.com/docs/api-reference"
+      ]
+    },
+    {
+      "prefix": "",
+      "suffix": "",
+      "method": "POST",
+      "url": "/v1/images/generations",
+      "omittableUrlParts": [
+        "v1"
+      ],
+      "acceptsCallbacks": true,
+      "docsLinks": [
+        "https://platform.openai.com/docs/api-reference"
+      ]
+    },
+    {
+      "prefix": "",
+      "suffix": "",
+      "method": "POST",
+      "url": "/v1/images/edits",
+      "omittableUrlParts": [
+        "v1"
+      ],
+      "acceptsCallbacks": true,
+      "docsLinks": [
+        "https://platform.openai.com/docs/api-reference"
+      ]
+    },
+    {
+      "prefix": "",
+      "suffix": "",
+      "method": "POST",
+      "url": "/v1/images/variations",
+      "omittableUrlParts": [
+        "v1"
+      ],
+      "acceptsCallbacks": true,
+      "docsLinks": [
+        "https://platform.openai.com/docs/api-reference"
+      ]
+    },
+    {
+      "prefix": "",
+      "suffix": "",
+      "method": "POST",
+      "url": "/v1/moderations",
+      "omittableUrlParts": [
+        "v1"
+      ],
+      "docsLinks": [
+        "https://platform.openai.com/docs/api-reference"
+      ]
+    }
+  ]
+}
