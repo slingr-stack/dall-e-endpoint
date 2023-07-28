@@ -41,35 +41,35 @@ endpoint.models.get = function(model, httpOptions) {
             sys.logs.error('Invalid argument received.');
             return;
     }
-    sys.logs.debug('[dallE] GET from: ' + url);
+    sys.logs.debug('[dalle] GET from: ' + url);
 	var options = checkHttpOptions(url, httpOptions);
 	return endpoint._get(options);
 };
 
 endpoint.images.generations.post = function(httpOptions, callbackData, callbacks) {
     var url = parse('/v1/images/generations');
-    sys.logs.debug('[dallE] POST from: ' + url);
+    sys.logs.debug('[dalle] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options, callbackData, callbacks);
 };
 
 endpoint.images.edits.post = function(httpOptions, callbackData, callbacks) {
     var url = parse('/v1/images/edits');
-    sys.logs.debug('[dallE] POST from: ' + url);
+    sys.logs.debug('[dalle] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options, callbackData, callbacks);
 };
 
 endpoint.images.variations.post = function(httpOptions, callbackData, callbacks) {
     var url = parse('/v1/images/variations');
-    sys.logs.debug('[dallE] POST from: ' + url);
+    sys.logs.debug('[dalle] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options, callbackData, callbacks);
 };
 
 endpoint.moderations.post = function(httpOptions) {
     var url = parse('/v1/moderations');
-    sys.logs.debug('[dallE] POST from: ' + url);
+    sys.logs.debug('[dalle] POST from: ' + url);
     var options = checkHttpOptions(url, httpOptions);
     return endpoint._post(options);
 };

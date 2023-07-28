@@ -1,6 +1,6 @@
 {
   "fileName": "functions",
-  "endpointName": "dallE",
+  "endpointName": "dalle",
   "apiDescriptors": [
     {
       "prefix": "",

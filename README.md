@@ -21,7 +21,7 @@ Please make sure you take a look at the documentation from OpenAI as features ar
 Once you configured the endpoint, you can list current models with this call:
 
 ```js
-for(var model of app.endpoints.dallE.models.get().data)
+for(var model of app.endpoints.dalle.models.get().data)
 { 
     log(JSON.stringify(model))
 }
@@ -30,7 +30,7 @@ for(var model of app.endpoints.dallE.models.get().data)
 Or you can generate a completion with this call:
 
 ```js
-var res = app.endpoitns.dallE.images.generations.post({
+var res = app.endpoitns.dalle.images.generations.post({
     prompt: "Once upon a time",
     n: 4,
     size: "1024x1024",
@@ -55,18 +55,18 @@ The organization ID of the account. This field is optional. [Organization ID](ht
 
 # Javascript API
 
-The Javascript API of the dallE endpoint has three pieces:
+The Javascript API of the dalle endpoint has three pieces:
 
 - **HTTP requests**: These allow to make regular HTTP requests.
 - **Shortcuts**: These are helpers to make HTTP request to the API in a more convenient way.
 - **Additional Helpers**: These helpers provide additional features that facilitate or improves the endpoint usage in SLINGR.
 
 ## HTTP requests
-You can make `GET`,`POST` requests to the [dallE API](https://platform.openai.com/docs/api-reference/images) like this:
+You can make `GET`,`POST` requests to the [dalle API](https://platform.openai.com/docs/api-reference/images) like this:
 ```javascript
-var response = app.endpoints.dallE.get('/v1/models/:model')
-var response = app.endpoints.dallE.post('/v1/moderations', body)
-var response = app.endpoints.dallE.post('/v1/moderations')
+var response = app.endpoints.dalle.get('/v1/models/:model')
+var response = app.endpoints.dalle.post('/v1/moderations', body)
+var response = app.endpoints.dalle.post('/v1/moderations')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
@@ -84,42 +84,42 @@ Instead of having to use the generic HTTP methods, you can (and should) make use
 * HTTP Method: 'GET'
 * More info: https://platform.openai.com/docs/api-reference
 ```javascript
-app.endpoints.dallE.models.get()
+app.endpoints.dalle.models.get()
 ```
 ---
 * API URL: '/v1/models/:model'
 * HTTP Method: 'GET'
 * More info: https://platform.openai.com/docs/api-reference
 ```javascript
-app.endpoints.dallE.models.get()
+app.endpoints.dalle.models.get()
 ```
 ---
 * API URL: '/v1/images/generations'
 * HTTP Method: 'POST'
 * More info: https://platform.openai.com/docs/api-reference
 ```javascript
-app.endpoints.dallE.images.generations.post(body, callbackData, callbacks)
+app.endpoints.dalle.images.generations.post(body, callbackData, callbacks)
 ```
 ---
 * API URL: '/v1/images/edits'
 * HTTP Method: 'POST'
 * More info: https://platform.openai.com/docs/api-reference
 ```javascript
-app.endpoints.dallE.images.edits.post(body, callbackData, callbacks)
+app.endpoints.dalle.images.edits.post(body, callbackData, callbacks)
 ```
 ---
 * API URL: '/v1/images/variations'
 * HTTP Method: 'POST'
 * More info: https://platform.openai.com/docs/api-reference
 ```javascript
-app.endpoints.dallE.images.variations.post(body, callbackData, callbacks)
+app.endpoints.dalle.images.variations.post(body, callbackData, callbacks)
 ```
 ---
 * API URL: '/v1/moderations'
 * HTTP Method: 'POST'
 * More info: https://platform.openai.com/docs/api-reference
 ```javascript
-app.endpoints.dallE.moderations.post(body)
+app.endpoints.dalle.moderations.post(body)
 ```
 ---
 

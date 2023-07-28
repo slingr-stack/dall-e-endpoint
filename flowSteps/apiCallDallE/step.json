@@ -1,8 +1,8 @@
 {
-  "label": "API call to dallE",
+  "label": "API call to dalle",
   "name": "apiCallDallE",
   "category": "integrations",
-  "description": "This flow step will send generic request to dallE",
+  "description": "This flow step will send generic request to dalle",
   "inputs": [
     {
       "label": "Url",
