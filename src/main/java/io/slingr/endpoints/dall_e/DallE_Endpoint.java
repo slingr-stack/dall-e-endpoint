@@ -16,7 +16,7 @@ import org.slf4j.Logger;
  * DALL-E endpoint
  * Created by pasaperez on 6/6/23.
  */
-@SlingrEndpoint(name = "dallE", functionPrefix = "_")
+@SlingrEndpoint(name = "dalle", functionPrefix = "_")
 public class DallE_Endpoint extends HttpEndpoint {
     private static final Logger logger = org.slf4j.LoggerFactory.getLogger(DallE_Endpoint.class);
 
