@@ -1,6 +1,6 @@
 {
     "label": "DALL-E",
-    "name": "dall-e",
+    "name": "dalle",
     "apiVersion": "v1",
     "internal": false,
     "configurationType": "GLOBAL",
